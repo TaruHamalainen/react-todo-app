@@ -1,20 +1,30 @@
-import "./themebutton.css";
-import { BsSunFill, BsFillMoonFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import "../styles/ThemeButton.css";
 
 export default function ThemeButton() {
-  const handleThemeChange = () => {
-    document.documentElement.classList.toggle("dark");
-  };
+  const [theme, setTheme] = useState(localStorage.theme);
+  const colorTheme = theme === "dark" ? "light" : "dark";
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove(colorTheme);
+    root.classList.add(theme);
+
+    localStorage.setItem("theme", theme);
+  }, [theme, colorTheme]);
+
   return (
-    <div className="flex items-center gap-2 ">
-      <BsSunFill className="text-md text-slate-800 dark:text-slate-50" />
+    <div className="flex   items-center gap-2 self-end p-3 bg-light_gray dark:bg-very_dark_gray mb-2 rounded-md ">
+      <p className="text-lg text-medium_gray dark:text-white">
+        {theme === "dark" ? "Switch to lightmode" : "Switch to Darkmode"}
+      </p>
       <input
-        onChange={handleThemeChange}
+        className="themebutton_input"
+        onChange={() => setTheme(colorTheme)}
         type="checkbox"
         id="darkmode-toggle"
       />
-      <label htmlFor="darkmode-toggle"></label>
-      <BsFillMoonFill className="text-md text-slate-800 dark:text-slate-50" />
+      <label className="themebutton_label" htmlFor="darkmode-toggle"></label>
     </div>
   );
 }
