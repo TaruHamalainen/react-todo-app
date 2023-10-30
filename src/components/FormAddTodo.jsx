@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function FormAddTodo({ onAddTodo }) {
   const [todo, setTodo] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     onAddTodo({
@@ -13,7 +14,7 @@ export default function FormAddTodo({ onAddTodo }) {
     setTodo("");
   };
   return (
-    <form onSubmit={handleSubmit} className=" container p-4  flex gap-2  ">
+    <form onSubmit={handleSubmit} className=" container p-2   flex gap-2  ">
       <input
         className="p-2 w-full  rounded-lg border-none focus:outline-none bg-light_gray dark:bg-very_dark_gray placeholder:text-medium_gray dark:placeholder:text-white text-medium_gray dark:text-white"
         type="text"
@@ -22,7 +23,7 @@ export default function FormAddTodo({ onAddTodo }) {
         value={todo}
         onChange={(event) => setTodo(event.target.value)}
       />
-      <button className="bg-purple uppercase font-bold px-4 py-1 rounded-lg text-white">
+      <button className="bg-purple uppercase font-bold px-4 py-1 rounded-lg text-white hover:bg-purple_hover">
         Add
       </button>
     </form>

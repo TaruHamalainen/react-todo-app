@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function FormEditTodo({ todo, onOpenEditTodo, onEditTodo }) {
   const [currentTodo, setCurrentTodo] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     onEditTodo(todo.id, currentTodo);
