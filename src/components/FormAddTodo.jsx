@@ -4,7 +4,12 @@ export default function FormAddTodo({ onAddTodo }) {
   const [todo, setTodo] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    onAddTodo({ id: crypto.randomUUID(), editing: false, task: todo });
+    onAddTodo({
+      id: crypto.randomUUID(),
+      editing: false,
+      copleted: false,
+      task: todo,
+    });
     setTodo("");
   };
   return (

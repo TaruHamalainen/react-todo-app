@@ -6,6 +6,7 @@ export default function TodoList({
   onDeleteTodo,
   onOpenEditTodo,
   onEditTodo,
+  onCompleteTodo,
 }) {
   return (
     <ul className="flex  flex-col gap-4  ">
@@ -16,6 +17,7 @@ export default function TodoList({
           onDeleteTodo={onDeleteTodo}
           onOpenEditTodo={onOpenEditTodo}
           onEditTodo={onEditTodo}
+          onCompleteTodo={onCompleteTodo}
         />
       ))}
     </ul>

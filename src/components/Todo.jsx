@@ -7,16 +7,21 @@ export default function Todo({
   onDeleteTodo,
   onOpenEditTodo,
   onEditTodo,
+  onCompleteTodo,
 }) {
   return (
     <>
       {!todo.editing ? (
         <li className=" container border-2 border-lines_dark dark:border:lines_light flex justify-between   bg-light_gray dark:bg-very_dark_gray sm:px-7 sm:py-3 p-2 rounded-lg text-black dark:text-white ">
-          <h2 className="sm:text-lg font-semibold  break-words max-w-[60%]">
+          <h2
+            className={`sm:text-lg font-semibold  break-words max-w-[60%] ${
+              todo.completed ? "line-through text-medium_gray" : ""
+            }`}
+          >
             {todo.task}
           </h2>
           <div className="flex gap-6 justify-end">
-            <input type="checkbox" />
+            <input type="checkbox" onChange={() => onCompleteTodo(todo.id)} />
             <button onClick={() => onOpenEditTodo(todo.id)}>
               <BiEdit className="text-xl text-purple font-bold" />
             </button>
