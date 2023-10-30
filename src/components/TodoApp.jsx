@@ -22,10 +22,18 @@ export default function TodoApp() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const handleEditTodo = (id) => {
+  const handleOpenEditTodo = (id) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, editing: !todo.editing } : { ...todo }
+      )
+    );
+  };
+
+  const handleEditTodo = (id, value) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, task: value, editing: false } : { ...todo }
       )
     );
   };
@@ -40,6 +48,7 @@ export default function TodoApp() {
       <TodoList
         todos={todos}
         onDeleteTodo={handleDeleteTodo}
+        onOpenEditTodo={handleOpenEditTodo}
         onEditTodo={handleEditTodo}
       />
       <Filter />

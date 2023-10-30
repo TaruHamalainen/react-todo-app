@@ -2,7 +2,12 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import { BiEdit } from "react-icons/bi";
 import FormEditTodo from "./FormEditTodo";
 
-export default function Todo({ todo, onDeleteTodo, onEditTodo }) {
+export default function Todo({
+  todo,
+  onDeleteTodo,
+  onOpenEditTodo,
+  onEditTodo,
+}) {
   return (
     <>
       {!todo.editing ? (
@@ -12,7 +17,7 @@ export default function Todo({ todo, onDeleteTodo, onEditTodo }) {
           </h2>
           <div className="flex gap-6 justify-end">
             <input type="checkbox" />
-            <button onClick={() => onEditTodo(todo.id)}>
+            <button onClick={() => onOpenEditTodo(todo.id)}>
               <BiEdit className="text-xl text-purple font-bold" />
             </button>
             <button onClick={() => onDeleteTodo(todo.id)}>
@@ -21,7 +26,11 @@ export default function Todo({ todo, onDeleteTodo, onEditTodo }) {
           </div>
         </li>
       ) : (
-        <FormEditTodo todo={todo} onEditTodo={onEditTodo} />
+        <FormEditTodo
+          todo={todo}
+          onOpenEditTodo={onOpenEditTodo}
+          onEditTodo={onEditTodo}
+        />
       )}
     </>
   );
