@@ -27,6 +27,10 @@ This is my first react project. My goal was to learn react and tailwind css.
 ![todo_app_edit_todo_lightmode_desktop](https://github.com/TaruHamalainen/react-todo-app/assets/82812247/3b3f9cac-16f9-42ba-85c9-45384c0d7020)
 
 
+## Performance
+- my goal is to optimize performance
+![todo_app_performance_report](https://github.com/TaruHamalainen/react-todo-app/assets/82812247/2986d557-a901-47ad-87be-ac4f72433783)
+
 
 
 
