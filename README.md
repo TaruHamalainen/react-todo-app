@@ -4,6 +4,8 @@
 Todo app to manage your tasks.
 This is my first react project. My goal was to learn react and tailwind css. 
 
+# App is live: https://dailydoerapp.netlify.app/
+
 ## Features
 - Add todos
 - edit todos
