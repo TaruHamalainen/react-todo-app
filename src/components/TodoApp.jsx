@@ -45,6 +45,15 @@ export default function TodoApp() {
       )
     );
   };
+
+  const handleClearList = () => {
+    setTodos([]);
+  };
+
+  const handleRemoveCompleted = () => {
+    setTodos(todos.filter((todo) => !todo.completed));
+  };
+
   return (
     <div className="max-w-3xl container  mx-auto flex   flex-col gap-6  p-2 rounded-lg bg-white dark:bg-dark_gray shadow-lg ">
       <ThemeButton />
@@ -60,7 +69,11 @@ export default function TodoApp() {
         onEditTodo={handleEditTodo}
         onCompleteTodo={handleCompleteTodo}
       />
-      <Filter />
+      <Filter
+        onClearList={handleClearList}
+        todos={todos}
+        onRemoveCompleted={handleRemoveCompleted}
+      />
     </div>
   );
 }

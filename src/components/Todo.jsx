@@ -21,7 +21,11 @@ export default function Todo({
             {todo.task}
           </h2>
           <div className="flex gap-6 justify-end">
-            <input type="checkbox" onChange={() => onCompleteTodo(todo.id)} />
+            <input
+              type="checkbox"
+              value={todo.completed}
+              onChange={() => onCompleteTodo(todo.id)}
+            />
             <button onClick={() => onOpenEditTodo(todo.id)}>
               <BiEdit className="text-xl text-purple font-bold" />
             </button>
