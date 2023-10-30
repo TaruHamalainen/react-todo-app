@@ -28,7 +28,7 @@ This is my first react project. My goal was to learn react and tailwind css.
 
 
 ## Performance
-- my goal is to optimize performance
+my goal is to optimize performance
 ![todo_app_performance_report](https://github.com/TaruHamalainen/react-todo-app/assets/82812247/2986d557-a901-47ad-87be-ac4f72433783)
 
 
