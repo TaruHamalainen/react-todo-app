@@ -33,6 +33,7 @@ This is my first react project. My goal was to learn react and tailwind css.
 
 my goal is to optimize performance
 
+![todo_app_darkmode_phone](https://github.com/TaruHamalainen/react-todo-app/assets/82812247/12726f09-fa27-4f71-976d-07a0fa25adc1)
 
 
 
