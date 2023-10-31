@@ -24,6 +24,7 @@ export default function Todo({
             <input
               type="checkbox"
               value={todo.completed}
+              checked={todo.completed}
               onChange={() => onCompleteTodo(todo.id)}
             />
             <button onClick={() => onOpenEditTodo(todo.id)}>

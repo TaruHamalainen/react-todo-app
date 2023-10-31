@@ -8,7 +8,7 @@ export default function FormAddTodo({ onAddTodo }) {
     onAddTodo({
       id: crypto.randomUUID(),
       editing: false,
-      copleted: false,
+      completed: false,
       task: todo,
     });
     setTodo("");

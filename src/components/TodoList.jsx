@@ -6,6 +6,7 @@ export default function TodoList({
   onOpenEditTodo,
   onEditTodo,
   onCompleteTodo,
+  isChecked,
 }) {
   return (
     <ul className="flex  flex-col gap-4  ">
